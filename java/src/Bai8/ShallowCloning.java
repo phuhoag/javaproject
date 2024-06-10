@@ -1,20 +1,28 @@
 package Bai8;
 
-import Bai8.vidu1.SanPham;
+import Bai8.vidu2.SanPham;
 
 public class ShallowCloning {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		SanPham sp1 = new SanPham(12, "Xiaomi");
+		System.out.println(sp1);
+		//Thuc hien phep gan
+		SanPham sp2;
+		try {
+			sp2 = (SanPham) sp1.clone();
+			sp2.setTenSanPham("Nokia");
+			sp2.setMaSanPham(18);
+			//Xuat gia tri
+			System.out.println(sp1);
+			System.out.println(sp2);
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		SanPham sp1 = new SanPham(12, "Xiomi");
-		System.out.println(sp1);
-		// thuc hien phep gan
-		SanPham sp2 = sp1;
-		sp2.setTenSanPham("Nokia");
-		System.out.println(sp1);
-		System.out.println(sp2);
 	}
 
 }
